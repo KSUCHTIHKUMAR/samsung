@@ -1,21 +1,370 @@
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Web Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Modern Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111827;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: #1e3a8a;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 45px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #1e3a8a;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #7c3aed;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Hello World!</h1>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MyWebsite</div>
 
-    <p>Welcome to my first HTML webpage.</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <h2>About Me</h2>
+    <!-- Hero -->
+    <section class="hero" id="home">
 
-    <p>I am a CSE student learning web development.</p>
+        <div class="hero-content">
 
-    <button>Click Me</button>
+            <h1>Build Something Amazing</h1>
+
+            <p>
+                Welcome to my modern website created using
+                HTML, CSS and JavaScript.
+            </p>
+
+            <a href="#services" class="btn">
+                Explore More
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="contact">
+
+            <p style="text-align:center; line-height:1.8;">
+                I am a Computer Science student interested in
+                programming, artificial intelligence and web development.
+                This website demonstrates how HTML, CSS and JavaScript
+                can work together to create an interactive webpage.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🌐 Web Development</h3>
+                <p>
+                    Creating responsive websites using HTML,
+                    CSS and JavaScript.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🤖 Artificial Intelligence</h3>
+                <p>
+                    Learning machine learning, AI concepts
+                    and intelligent applications.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Programming</h3>
+                <p>
+                    Developing programs and solving problems
+                    using different programming languages.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <div class="contact">
+
+            <form onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button class="submit-btn" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MyWebsite. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+
+            alert("Thank you, " + name + "! Your message has been received.");
+
+        }
+
+    </script>
 
 </body>
 </html>
